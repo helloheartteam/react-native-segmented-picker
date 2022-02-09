@@ -14,7 +14,11 @@ export const defaultProps = {
   toolbarBorderColor: '#E7E7E7',
   selectionBackgroundColor: '#F8F8F8',
   selectionBorderColor: '#C9C9C9',
+   //-----------------------//
+   fontSize: 19,
+   //-----------------------//
   backgroundColor: '#FFFFFF',
+  
   onValueChange: () => {},
   onCancel: () => {},
   onConfirm: () => {},
@@ -66,6 +70,9 @@ export const propTypes = {
   },
   confirmText: PropTypes.string,
   nativeTestID: PropTypes.string,
+  //-----------------------//
+  fontSize: PropTypes.number,
+  //-----------------------//
   // Styling
   confirmTextColor: PropTypes.string,
   pickerItemTextColor: PropTypes.string,

@@ -54,6 +54,10 @@ export interface Props {
   confirmText: string;
   nativeTestID: string;
   // Styling
+
+  //---------------------//
+  fontSize: number;
+  //---------------------//
   confirmTextColor: string;
   pickerItemTextColor: string;
   toolbarBackgroundColor: string;
@@ -586,7 +590,7 @@ export default class SegmentedPicker extends Component<Props, State> {
     item: RenderablePickerItem;
     index: number;
   }): ReactElement => {
-    const { pickerItemTextColor } = this.props;
+    const { pickerItemTextColor, fontSize } = this.props;
     return (
       <View style={styles.pickerItem}>
         <TouchableOpacity
@@ -596,7 +600,9 @@ export default class SegmentedPicker extends Component<Props, State> {
         >
           <Text
             numberOfLines={1}
-            style={[styles.pickerItemText, { color: pickerItemTextColor }]}
+            style={[styles.pickerItemText, 
+              { color: pickerItemTextColor,
+                fontSize: fontSize }]}
           >
             {label}
           </Text>
@@ -629,6 +635,9 @@ export default class SegmentedPicker extends Component<Props, State> {
       confirmText,
       confirmTextColor,
       pickerItemTextColor,
+      //---------------------//
+      fontSize,
+      //---------------------//
       toolbarBackgroundColor,
       toolbarBorderColor,
       selectionBackgroundColor,
