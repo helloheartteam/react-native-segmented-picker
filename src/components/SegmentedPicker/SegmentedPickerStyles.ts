@@ -39,12 +39,10 @@ export default StyleSheet.create({
     paddingTop: GUTTER_HEIGHT,
     paddingRight: 0,
     paddingBottom: GUTTER_HEIGHT,
-    paddingLeft: GUTTER_WIDTH,
   },
 
   pickerColumn: {
     flex: 1,
-    marginRight: 12,
     position: 'relative',
   },
 

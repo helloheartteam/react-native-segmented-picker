@@ -9,6 +9,7 @@ import {
   Text,
   NativeSyntheticEvent,
   NativeScrollEvent,
+  
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { defaultProps, propTypes } from './SegmentedPickerPropTypes';
@@ -74,6 +75,7 @@ export interface Props {
 interface State {
   visible: boolean;
   pickersHeight: number;
+  selected: Selections;
 }
 
 interface RenderablePickerItem extends PickerItem {
@@ -109,6 +111,7 @@ export default class SegmentedPicker extends Component<Props, State> {
     this.state = {
       visible: false,
       pickersHeight: 0,
+      selected: {},
     };
   }
 
@@ -256,6 +259,7 @@ export default class SegmentedPicker extends Component<Props, State> {
         ...this.selectionChanges,
         [column]: items[index].value,
       };
+      this.setState({ selected: this.selectionChanges });
       if (emitEvent) {
         onValueChange({ column, value: items[index].value });
       }
@@ -584,28 +588,43 @@ export default class SegmentedPicker extends Component<Props, State> {
       column,
       key,
       testID,
+      value
     },
     index,
   }: {
     item: RenderablePickerItem;
     index: number;
   }): ReactElement => {
-    const { pickerItemTextColor, fontSize } = this.props;
+    const { selected } = this.state;
+    const { fontSize } = this.props;
+
     return (
       <View style={styles.pickerItem}>
         <TouchableOpacity
           activeOpacity={0.7}
-          onPress={() => this.selectIndex(index, column)}
+          onPress={() => 
+            this.selectIndex(index, column)
+            }
           testID={testID || key}
         >
-          <Text
-            numberOfLines={1}
-            style={[styles.pickerItemText, 
-              { color: pickerItemTextColor,
+          {(selected[column]  === value ) 
+           ?<Text
+              numberOfLines={1}
+              style={[styles.pickerItemText, 
+                { color: "#90928B",
                 fontSize: fontSize }]}
-          >
-            {label}
-          </Text>
+            >
+               {label}
+            </Text>
+           : <Text
+              numberOfLines={1}
+              style={[styles.pickerItemText, 
+                { color: '#DFDFDF',
+                fontSize: fontSize }]}
+            >
+                {label}
+            </Text>
+  }
         </TouchableOpacity>
       </View>
     );

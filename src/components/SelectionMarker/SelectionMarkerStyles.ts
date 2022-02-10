@@ -13,8 +13,6 @@ export default StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingLeft: GUTTER_WIDTH,
-    paddingRight: GUTTER_WIDTH,
   },
 
   // Eliminates border rendering inconsistencies between iOS & Android
