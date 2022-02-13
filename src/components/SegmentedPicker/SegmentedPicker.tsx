@@ -55,14 +55,11 @@ export interface Props {
   confirmText: string;
   nativeTestID: string;
   // Styling
-
-  //---------------------//
   fontSizeToolbar: number;
   fontFamilyConfirmText: string;
   fontSize: number;
   itemTextColor: string;
   selectedItemTextColor: string;
-  //---------------------//
   confirmTextColor: string;
   pickerItemTextColor: string;
   toolbarBackgroundColor: string;
@@ -658,13 +655,11 @@ export default class SegmentedPicker extends Component<Props, State> {
       confirmText,
       confirmTextColor,
       pickerItemTextColor,
-      //---------------------//
       fontSizeToolbar,
       fontFamilyConfirmText,
       fontSize,
       selectedItemTextColor,
       itemTextColor,
-      //---------------------//
       toolbarBackgroundColor,
       toolbarBorderColor,
       selectionBackgroundColor,
@@ -734,6 +729,9 @@ export default class SegmentedPicker extends Component<Props, State> {
                       selectionBackgroundColor,
                       selectionBorderColor,
                       pickerItemTextColor,
+                      fontSize,
+                      selectedItemTextColor,
+                      itemTextColor,
                     }}
                   />
                 </View>
