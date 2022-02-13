@@ -3,11 +3,14 @@ import { View, TouchableOpacity, Text } from 'react-native';
 import styles from './ToolbarStyles';
 import { TEST_IDS } from '../../config/constants';
 
+
 interface Props {
   confirmText: string;
   confirmTextColor: string;
   toolbarBackground: string;
   toolbarBorderColor: string;
+  fontSizeToolbar: number;
+  fontFamilyConfirmText: string;
   onConfirm: () => void;
 }
 
@@ -20,6 +23,8 @@ export default ({
   confirmTextColor,
   toolbarBackground,
   toolbarBorderColor,
+  fontSizeToolbar,
+  fontFamilyConfirmText,
   onConfirm,
 }: Props): ReactElement => (
   <View
@@ -37,7 +42,7 @@ export default ({
       testID={TEST_IDS.CONFIRM_BUTTON}
     >
       <View style={styles.toolbarConfirmContainer}>
-        <Text style={[styles.toolbarConfirmText, { color: confirmTextColor }]}>
+        <Text style={[styles.toolbarConfirmText, { color: confirmTextColor, fontSize: fontSizeToolbar, fontFamily: fontFamilyConfirmText }]}>
           {confirmText}
         </Text>
       </View>

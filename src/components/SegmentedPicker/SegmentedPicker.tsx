@@ -57,6 +57,8 @@ export interface Props {
   // Styling
 
   //---------------------//
+  fontSizeToolbar: number;
+  fontFamilyConfirmText: string;
   fontSize: number;
   itemTextColor: string;
   selectedItemTextColor: string;
@@ -657,6 +659,8 @@ export default class SegmentedPicker extends Component<Props, State> {
       confirmTextColor,
       pickerItemTextColor,
       //---------------------//
+      fontSizeToolbar,
+      fontFamilyConfirmText,
       fontSize,
       selectedItemTextColor,
       itemTextColor,
@@ -704,6 +708,8 @@ export default class SegmentedPicker extends Component<Props, State> {
             style={[styles.pickerContainer, { height: `${size * 100}%`, backgroundColor }]}
           >
             <Toolbar
+              fontSizeToolbar={fontSizeToolbar}
+              fontFamilyConfirmText={fontFamilyConfirmText}
               confirmText={confirmText}
               confirmTextColor={confirmTextColor}
               toolbarBackground={toolbarBackgroundColor}

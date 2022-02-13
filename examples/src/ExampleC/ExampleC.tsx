@@ -73,6 +73,15 @@ class ExampleC extends Component<Props, State> {
           onCancel={this.hidePicker}
           options={options}
           defaultSelections={selections}
+          fontSize={19}
+          fontSizeToolbar={21}
+          confirmText='confirm the a picker'
+          fontFamilyConfirmText='Muli'
+          toolbarBorderColor='#ffffff'
+          toolbarBackgroundColor='#ffffff'
+          selectionBackgroundColor='#ffffff'
+          selectedItemTextColor='#000000'
+          itemTextColor='#a6a6a6'
         />
       </View>
     );
