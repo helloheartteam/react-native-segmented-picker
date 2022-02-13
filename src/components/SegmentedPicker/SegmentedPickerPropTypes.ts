@@ -72,6 +72,8 @@ export const propTypes = {
   nativeTestID: PropTypes.string,
   //-----------------------//
   fontSize: PropTypes.number,
+  selectedItemTextColor: PropTypes.string,
+  itemTextColor: PropTypes.string,
   //-----------------------//
   // Styling
   confirmTextColor: PropTypes.string,
