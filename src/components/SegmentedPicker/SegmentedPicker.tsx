@@ -58,7 +58,6 @@ export interface Props {
   fontSizeToolbar: number;
   fontFamilyConfirmText: string;
   fontSize: number;
-  itemTextColor: string;
   selectedItemTextColor: string;
   confirmTextColor: string;
   pickerItemTextColor: string;
@@ -597,7 +596,7 @@ export default class SegmentedPicker extends Component<Props, State> {
     index: number;
   }): ReactElement => {
     const { selected } = this.state;
-    const { selectedItemTextColor, itemTextColor, fontSize } = this.props;
+    const { selectedItemTextColor, pickerItemTextColor, fontSize } = this.props;
 
     return (
       <View style={styles.pickerItem}>
@@ -620,7 +619,7 @@ export default class SegmentedPicker extends Component<Props, State> {
            : <Text
               numberOfLines={1}
               style={[styles.pickerItemText, 
-                { color: itemTextColor,
+                { color: pickerItemTextColor,
                 fontSize: fontSize }]}
             >
                 {label}
@@ -659,7 +658,6 @@ export default class SegmentedPicker extends Component<Props, State> {
       fontFamilyConfirmText,
       fontSize,
       selectedItemTextColor,
-      itemTextColor,
       toolbarBackgroundColor,
       toolbarBorderColor,
       selectionBackgroundColor,
@@ -731,7 +729,6 @@ export default class SegmentedPicker extends Component<Props, State> {
                       pickerItemTextColor,
                       fontSize,
                       selectedItemTextColor,
-                      itemTextColor,
                     }}
                   />
                 </View>

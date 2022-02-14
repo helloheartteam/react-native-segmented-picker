@@ -9,14 +9,13 @@ export const defaultProps = {
   confirmText: 'Done',
   nativeTestID: undefined,
   confirmTextColor: '#0A84FF',
-  pickerItemTextColor: '#282828',
+  pickerItemTextColor: '#a6a6a6',
+  selectedItemTextColor: '#000000',
   toolbarBackgroundColor: '#FAFAF8',
   toolbarBorderColor: '#E7E7E7',
   selectionBackgroundColor: '#F8F8F8',
   selectionBorderColor: '#C9C9C9',
-   //-----------------------//
-   fontSize: 19,
-   //-----------------------//
+  fontSize: 19,
   backgroundColor: '#FFFFFF',
   
   onValueChange: () => {},
@@ -70,12 +69,9 @@ export const propTypes = {
   },
   confirmText: PropTypes.string,
   nativeTestID: PropTypes.string,
-  //-----------------------//
+  // Styling
   fontSize: PropTypes.number,
   selectedItemTextColor: PropTypes.string,
-  itemTextColor: PropTypes.string,
-  //-----------------------//
-  // Styling
   confirmTextColor: PropTypes.string,
   pickerItemTextColor: PropTypes.string,
   toolbarBackgroundColor: PropTypes.string,

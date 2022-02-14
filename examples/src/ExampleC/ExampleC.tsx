@@ -81,7 +81,6 @@ class ExampleC extends Component<Props, State> {
           toolbarBackgroundColor='#ffffff'
           selectionBackgroundColor='#ffffff'
           selectedItemTextColor='#000000'
-          itemTextColor='#a6a6a6'
         />
       </View>
     );
