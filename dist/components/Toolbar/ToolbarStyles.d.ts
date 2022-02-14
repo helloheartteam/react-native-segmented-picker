@@ -14,7 +14,6 @@ declare const _default: {
         justifyContent: "center";
     };
     toolbarConfirmText: {
-        fontWeight: "bold";
         fontSize: number;
         paddingTop: number;
         paddingRight: number;
