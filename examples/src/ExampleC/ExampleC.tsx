@@ -66,21 +66,21 @@ class ExampleC extends Component<Props, State> {
         />
 
         <SegmentedPicker
-          native
+          
           nativeTestID="example_native_picker"
           visible={visible}
           onConfirm={this.onConfirm}
           onCancel={this.hidePicker}
           options={options}
           defaultSelections={selections}
-          fontSize={19}
-          fontSizeToolbar={21}
-          confirmText='confirm the a picker'
+          selectedItemTextColor='#000000'
+          fontSize={23}
+          fontSizeToolbar={19}
+          confirmText='confirm'
           fontFamilyConfirmText='Muli'
           toolbarBorderColor='#ffffff'
           toolbarBackgroundColor='#ffffff'
-          selectionBackgroundColor='#ffffff'
-          selectedItemTextColor='#000000'
+          selectionBackgroundColor='#F6F6F6'
         />
       </View>
     );

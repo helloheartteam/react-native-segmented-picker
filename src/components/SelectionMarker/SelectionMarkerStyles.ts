@@ -13,6 +13,8 @@ export default StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    paddingLeft: GUTTER_WIDTH,
+    paddingRight: GUTTER_WIDTH,
   },
 
   // Eliminates border rendering inconsistencies between iOS & Android
@@ -24,5 +26,6 @@ export default StyleSheet.create({
   selectionMarker: {
     width: '100%',
     height: ITEM_HEIGHT,
+    borderRadius: 8,
   },
 });

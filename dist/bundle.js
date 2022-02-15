@@ -73,11 +73,11 @@ const ANIMATION_TIME = 300;
  * Fixed sizing for list items and other UI elements.
  */
 
-const GUTTER_WIDTH = 18;
+const GUTTER_WIDTH = 16;
 const GUTTER_HEIGHT = 3;
 const ITEM_HEIGHTS = {
-  ios: 36,
-  default: 36
+  ios: 40,
+  default: 40
 };
 const TEXT_CORRECTION = 2;
 /**
@@ -184,6 +184,13 @@ var styles$1 = StyleSheet.create({
     paddingRight: GUTTER_WIDTH,
     paddingBottom: TEXT_CORRECTION,
     paddingLeft: 0
+  },
+  toolbarCancelText: {
+    fontSize: 15,
+    paddingTop: 0,
+    paddingRight: 0,
+    paddingBottom: TEXT_CORRECTION,
+    paddingLeft: GUTTER_WIDTH
   }
 });
 
@@ -237,7 +244,9 @@ var styles$2 = StyleSheet.create({
     left: 0,
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingLeft: GUTTER_WIDTH,
+    paddingRight: GUTTER_WIDTH
   },
   // Eliminates border rendering inconsistencies between iOS & Android
   selectionMarkerBorder: {
@@ -249,7 +258,8 @@ var styles$2 = StyleSheet.create({
   },
   selectionMarker: {
     width: '100%',
-    height: ITEM_HEIGHT$1
+    height: ITEM_HEIGHT$1,
+    borderRadius: 8
   }
 });
 
@@ -267,20 +277,8 @@ React.createElement(View, {
 },
 /*#__PURE__*/
 React.createElement(View, {
-  style: [styles$2.selectionMarkerBorder, {
-    backgroundColor: borderColor
-  }]
-}),
-/*#__PURE__*/
-React.createElement(View, {
   style: [styles$2.selectionMarker, {
     backgroundColor
-  }]
-}),
-/*#__PURE__*/
-React.createElement(View, {
-  style: [styles$2.selectionMarkerBorder, {
-    backgroundColor: borderColor
   }]
 })));
 
@@ -1139,15 +1137,7 @@ class SegmentedPicker extends Component {
         options: SegmentedPicker.ApplyPickerOptionDefaults(options),
         defaultSelections: defaultSelections,
         onValueChange: this.uiPickerValueChange,
-        onEmitSelections: this.uiPickerManager.ingestSelections,
-        theme: {
-          itemHeight: ITEM_HEIGHT$2,
-          selectionBackgroundColor,
-          selectionBorderColor,
-          pickerItemTextColor,
-          fontSize,
-          selectedItemTextColor
-        }
+        onEmitSelections: this.uiPickerManager.ingestSelections
       })), !this.isNative() &&
       /*#__PURE__*/
       React.createElement(React.Fragment, null,

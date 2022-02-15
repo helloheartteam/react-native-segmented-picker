@@ -722,14 +722,11 @@ export default class SegmentedPicker extends Component<Props, State> {
                     defaultSelections={defaultSelections}
                     onValueChange={this.uiPickerValueChange}
                     onEmitSelections={this.uiPickerManager.ingestSelections}
-                    theme={{
-                      itemHeight: ITEM_HEIGHT,
-                      selectionBackgroundColor,
-                      selectionBorderColor,
-                      pickerItemTextColor,
-                      fontSize,
-                      selectedItemTextColor,
-                    }}
+                    // theme={{
+                    //   itemHeight: ITEM_HEIGHT,
+                    //   selectionBackgroundColor,
+                    //   selectionBorderColor,
+                    // }}
                   />
                 </View>
               )}

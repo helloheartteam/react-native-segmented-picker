@@ -15,18 +15,18 @@ export default ({
   borderColor,
 }: Props): ReactElement => (
   <View style={styles.selectionMarkerContainer}>
-    <View
+    {/* <View
       style={[
         styles.selectionMarkerBorder,
         { backgroundColor: borderColor },
       ]}
-    />
+    /> */}
     <View style={[styles.selectionMarker, { backgroundColor }]} />
-    <View
+    {/* <View
       style={[
         styles.selectionMarkerBorder,
         { backgroundColor: borderColor },
       ]}
-    />
+    /> */}
   </View>
 );

@@ -25,4 +25,12 @@ export default StyleSheet.create({
     paddingBottom: TEXT_CORRECTION,
     paddingLeft: 0,
   },
+
+  toolbarCancelText: {
+    fontSize: 15,
+    paddingTop: 0,
+    paddingRight: 0,
+    paddingBottom: TEXT_CORRECTION,
+    paddingLeft: GUTTER_WIDTH,
+  },
 });

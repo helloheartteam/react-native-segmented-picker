@@ -5,7 +5,7 @@ export declare const ANIMATION_TIME = 300;
 /**
  * Fixed sizing for list items and other UI elements.
  */
-export declare const GUTTER_WIDTH = 18;
+export declare const GUTTER_WIDTH = 16;
 export declare const GUTTER_HEIGHT = 3;
 export declare const ITEM_HEIGHTS: {
     ios: number;

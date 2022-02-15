@@ -8,6 +8,8 @@ declare const _default: {
         flex: number;
         alignItems: "center";
         justifyContent: "center";
+        paddingLeft: number;
+        paddingRight: number;
     };
     selectionMarkerBorder: {
         width: string;
@@ -16,6 +18,7 @@ declare const _default: {
     selectionMarker: {
         width: string;
         height: number;
+        borderRadius: number;
     };
 };
 export default _default;

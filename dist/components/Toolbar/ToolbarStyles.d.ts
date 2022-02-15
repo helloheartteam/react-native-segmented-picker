@@ -20,5 +20,12 @@ declare const _default: {
         paddingBottom: number;
         paddingLeft: number;
     };
+    toolbarCancelText: {
+        fontSize: number;
+        paddingTop: number;
+        paddingRight: number;
+        paddingBottom: number;
+        paddingLeft: number;
+    };
 };
 export default _default;
