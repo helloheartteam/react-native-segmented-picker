@@ -708,6 +708,7 @@ export default class SegmentedPicker extends Component<Props, State> {
               toolbarBackground={toolbarBackgroundColor}
               toolbarBorderColor={toolbarBorderColor}
               onConfirm={this.onConfirm}
+              onCancel={this.onCancel}
             />
 
             <View style={styles.selectableArea}>

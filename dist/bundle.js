@@ -169,28 +169,34 @@ var styles$1 = StyleSheet.create({
     height: 42,
     borderBottomWidth: 1,
     flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    alignSelf: 'flex-start'
+    paddingTop: 16
   },
   toolbarConfirmContainer: {
     height: '100%',
-    paddingLeft: 30,
-    justifyContent: 'center'
+    flex: 1,
+    alignItems: 'flex-end'
+  },
+  toolbarCancelContainer: {
+    height: '100%',
+    flex: 1,
+    alignItems: 'flex-start',
+    width: 30
   },
   toolbarConfirmText: {
-    fontSize: 15,
+    fontSize: 23,
     paddingTop: 0,
     paddingRight: GUTTER_WIDTH,
     paddingBottom: TEXT_CORRECTION,
-    paddingLeft: 0
+    paddingLeft: GUTTER_WIDTH,
+    fontWeight: '500'
   },
   toolbarCancelText: {
-    fontSize: 15,
+    fontSize: 23,
     paddingTop: 0,
-    paddingRight: 0,
+    paddingRight: GUTTER_WIDTH,
     paddingBottom: TEXT_CORRECTION,
-    paddingLeft: GUTTER_WIDTH
+    paddingLeft: GUTTER_WIDTH,
+    fontWeight: '500'
   }
 });
 
@@ -206,7 +212,8 @@ var Toolbar = (({
   toolbarBorderColor,
   fontSizeToolbar,
   fontFamilyConfirmText,
-  onConfirm
+  onConfirm,
+  onCancel
 }) =>
 /*#__PURE__*/
 React.createElement(View, {
@@ -216,14 +223,32 @@ React.createElement(View, {
   }]
 },
 /*#__PURE__*/
+React.createElement(View, {
+  style: styles$1.toolbarCancelContainer
+},
+/*#__PURE__*/
+React.createElement(TouchableOpacity, {
+  activeOpacity: 0.4,
+  onPress: onCancel,
+  testID: TEST_IDS.CONFIRM_BUTTON
+},
+/*#__PURE__*/
+React.createElement(Text, {
+  style: [styles$1.toolbarCancelText, {
+    color: confirmTextColor,
+    fontSize: fontSizeToolbar,
+    fontFamily: fontFamilyConfirmText
+  }]
+}, "Cancel"))),
+/*#__PURE__*/
+React.createElement(View, {
+  style: styles$1.toolbarConfirmContainer
+},
+/*#__PURE__*/
 React.createElement(TouchableOpacity, {
   activeOpacity: 0.4,
   onPress: onConfirm,
   testID: TEST_IDS.CONFIRM_BUTTON
-},
-/*#__PURE__*/
-React.createElement(View, {
-  style: styles$1.toolbarConfirmContainer
 },
 /*#__PURE__*/
 React.createElement(Text, {
@@ -1119,7 +1144,8 @@ class SegmentedPicker extends Component {
         confirmTextColor: confirmTextColor,
         toolbarBackground: toolbarBackgroundColor,
         toolbarBorderColor: toolbarBorderColor,
-        onConfirm: this.onConfirm
+        onConfirm: this.onConfirm,
+        onCancel: this.onCancel
       }),
       /*#__PURE__*/
       React.createElement(View, {

@@ -4,14 +4,18 @@ declare const _default: {
         height: number;
         borderBottomWidth: number;
         flexDirection: "row";
-        justifyContent: "flex-end";
-        alignItems: "center";
-        alignSelf: "flex-start";
+        paddingTop: number;
     };
     toolbarConfirmContainer: {
         height: string;
-        paddingLeft: number;
-        justifyContent: "center";
+        flex: number;
+        alignItems: "flex-end";
+    };
+    toolbarCancelContainer: {
+        height: string;
+        flex: number;
+        alignItems: "flex-start";
+        width: number;
     };
     toolbarConfirmText: {
         fontSize: number;
@@ -19,6 +23,7 @@ declare const _default: {
         paddingRight: number;
         paddingBottom: number;
         paddingLeft: number;
+        fontWeight: "500";
     };
     toolbarCancelText: {
         fontSize: number;
@@ -26,6 +31,7 @@ declare const _default: {
         paddingRight: number;
         paddingBottom: number;
         paddingLeft: number;
+        fontWeight: "500";
     };
 };
 export default _default;
