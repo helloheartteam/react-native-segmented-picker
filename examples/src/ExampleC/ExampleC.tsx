@@ -75,9 +75,8 @@ class ExampleC extends Component<Props, State> {
           defaultSelections={selections}
           selectedItemTextColor='#000000'
           fontSize={23}
-          fontSizeToolbar={19}
+          fontSizeToolbar={21}
           confirmText='confirm'
-          fontFamilyConfirmText='Muli'
           toolbarBorderColor='#ffffff'
           toolbarBackgroundColor='#ffffff'
           selectionBackgroundColor='#F6F6F6'
