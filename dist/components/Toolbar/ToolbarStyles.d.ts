@@ -5,6 +5,7 @@ declare const _default: {
         borderBottomWidth: number;
         flexDirection: "row";
         paddingTop: number;
+        paddingBottom: number;
     };
     toolbarConfirmContainer: {
         height: string;
@@ -23,7 +24,7 @@ declare const _default: {
         paddingRight: number;
         paddingBottom: number;
         paddingLeft: number;
-        fontWeight: "500";
+        fontWeight: "300";
     };
     toolbarCancelText: {
         fontSize: number;
@@ -31,7 +32,7 @@ declare const _default: {
         paddingRight: number;
         paddingBottom: number;
         paddingLeft: number;
-        fontWeight: "500";
+        fontWeight: "300";
     };
 };
 export default _default;

@@ -1,13 +1,14 @@
 import { StyleSheet } from 'react-native';
-import { GUTTER_WIDTH, TEXT_CORRECTION } from '../../config/constants';
+import { GUTTER_WIDTH, TEXT_CORRECTION, ITEM_HEIGHTS } from '../../config/constants';
 
 export default StyleSheet.create({
   toolbarContainer: {
     width: '100%',
-    height: 42,
+    height: 60,
     borderBottomWidth: 1,
     flexDirection: 'row',
     paddingTop: 16,
+    paddingBottom: 16,
   },
 
   toolbarConfirmContainer: {
@@ -22,6 +23,7 @@ export default StyleSheet.create({
     alignItems: 'flex-start',
     width: 30,
 
+
   },
 
   toolbarConfirmText: {
@@ -30,7 +32,7 @@ export default StyleSheet.create({
     paddingRight: GUTTER_WIDTH,    
     paddingBottom: TEXT_CORRECTION,
     paddingLeft: GUTTER_WIDTH,
-    fontWeight: '500',
+    fontWeight: '300',
   },
 
   toolbarCancelText: {
@@ -39,6 +41,6 @@ export default StyleSheet.create({
     paddingRight: GUTTER_WIDTH,
     paddingBottom: TEXT_CORRECTION,
     paddingLeft: GUTTER_WIDTH,
-    fontWeight: '500',
+    fontWeight: '300',
   },
 });

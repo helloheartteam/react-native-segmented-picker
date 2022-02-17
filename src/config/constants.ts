@@ -8,7 +8,7 @@ export const ANIMATION_TIME = 300;
  */
 export const GUTTER_WIDTH = 16;
 export const GUTTER_HEIGHT = 3;
-export const ITEM_HEIGHTS = { ios: 40, default: 40 };
+export const ITEM_HEIGHTS = { ios: 42, default: 42 };
 export const TEXT_CORRECTION = 2;
 
 /**

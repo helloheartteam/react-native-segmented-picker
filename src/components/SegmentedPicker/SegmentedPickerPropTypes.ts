@@ -78,6 +78,7 @@ export const propTypes = {
   toolbarBorderColor: PropTypes.string,
   selectionBackgroundColor: PropTypes.string,
   selectionBorderColor: PropTypes.string,
+  fontFamilyConfirmText: PropTypes.string,
   backgroundColor: PropTypes.string,
   // Events
   onValueChange: PropTypes.func,

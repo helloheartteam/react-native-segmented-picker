@@ -47,6 +47,7 @@ export declare const propTypes: {
     toolbarBorderColor: PropTypes.Requireable<string>;
     selectionBackgroundColor: PropTypes.Requireable<string>;
     selectionBorderColor: PropTypes.Requireable<string>;
+    fontFamilyConfirmText: PropTypes.Requireable<string>;
     backgroundColor: PropTypes.Requireable<string>;
     onValueChange: PropTypes.Requireable<(...args: any[]) => any>;
     onCancel: PropTypes.Requireable<(...args: any[]) => any>;

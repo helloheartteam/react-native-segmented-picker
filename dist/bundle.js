@@ -58,6 +58,7 @@ const propTypes = {
   toolbarBorderColor: PropTypes.string,
   selectionBackgroundColor: PropTypes.string,
   selectionBorderColor: PropTypes.string,
+  fontFamilyConfirmText: PropTypes.string,
   backgroundColor: PropTypes.string,
   // Events
   onValueChange: PropTypes.func,
@@ -76,8 +77,8 @@ const ANIMATION_TIME = 300;
 const GUTTER_WIDTH = 16;
 const GUTTER_HEIGHT = 3;
 const ITEM_HEIGHTS = {
-  ios: 40,
-  default: 40
+  ios: 42,
+  default: 42
 };
 const TEXT_CORRECTION = 2;
 /**
@@ -166,10 +167,11 @@ var styles = StyleSheet.create({
 var styles$1 = StyleSheet.create({
   toolbarContainer: {
     width: '100%',
-    height: 42,
+    height: 60,
     borderBottomWidth: 1,
     flexDirection: 'row',
-    paddingTop: 16
+    paddingTop: 16,
+    paddingBottom: 16
   },
   toolbarConfirmContainer: {
     height: '100%',
@@ -188,7 +190,7 @@ var styles$1 = StyleSheet.create({
     paddingRight: GUTTER_WIDTH,
     paddingBottom: TEXT_CORRECTION,
     paddingLeft: GUTTER_WIDTH,
-    fontWeight: '500'
+    fontWeight: '300'
   },
   toolbarCancelText: {
     fontSize: 23,
@@ -196,7 +198,7 @@ var styles$1 = StyleSheet.create({
     paddingRight: GUTTER_WIDTH,
     paddingBottom: TEXT_CORRECTION,
     paddingLeft: GUTTER_WIDTH,
-    fontWeight: '500'
+    fontWeight: '300'
   }
 });
 
