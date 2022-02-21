@@ -66,7 +66,6 @@ class ExampleC extends Component<Props, State> {
         />
 
         <SegmentedPicker
-          
           nativeTestID="example_native_picker"
           visible={visible}
           onConfirm={this.onConfirm}
@@ -80,6 +79,7 @@ class ExampleC extends Component<Props, State> {
           toolbarBorderColor='#000000'
           toolbarBackgroundColor='#ffffff'
           selectionBackgroundColor='#F6F6F6'
+          selectionBorderColor='#ffffff'
         />
       </View>
     );

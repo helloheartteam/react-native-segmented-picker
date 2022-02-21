@@ -607,24 +607,14 @@ export default class SegmentedPicker extends Component<Props, State> {
             }
           testID={testID || key}
         >
-          {(selected[column]  === value ) 
-           ?<Text
+           <Text
               numberOfLines={1}
               style={[styles.pickerItemText, 
-                { color: selectedItemTextColor,
+                { color: (selected[column]  === value ) ?  selectedItemTextColor: pickerItemTextColor,
                 fontSize: fontSize }]}
             >
                {label}
             </Text>
-           : <Text
-              numberOfLines={1}
-              style={[styles.pickerItemText, 
-                { color: pickerItemTextColor,
-                fontSize: fontSize }]}
-            >
-                {label}
-            </Text>
-  }
         </TouchableOpacity>
       </View>
     );
@@ -723,11 +713,12 @@ export default class SegmentedPicker extends Component<Props, State> {
                     defaultSelections={defaultSelections}
                     onValueChange={this.uiPickerValueChange}
                     onEmitSelections={this.uiPickerManager.ingestSelections}
-                    // theme={{
-                    //   itemHeight: ITEM_HEIGHT,
-                    //   selectionBackgroundColor,
-                    //   selectionBorderColor,
-                    // }}
+                    theme={{
+                      itemHeight: ITEM_HEIGHT,
+                      selectionBackgroundColor,
+                      selectionBorderColor,
+                      pickerItemTextColor,
+                    }}
                   />
                 </View>
               )}

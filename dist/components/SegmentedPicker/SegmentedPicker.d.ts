@@ -58,6 +58,7 @@ export default class SegmentedPicker extends Component<Props, State> {
         toolbarBorderColor: import("prop-types").Requireable<string>;
         selectionBackgroundColor: import("prop-types").Requireable<string>;
         selectionBorderColor: import("prop-types").Requireable<string>;
+        fontFamilyConfirmText: import("prop-types").Requireable<string>;
         backgroundColor: import("prop-types").Requireable<string>;
         onValueChange: import("prop-types").Requireable<(...args: any[]) => any>;
         onCancel: import("prop-types").Requireable<(...args: any[]) => any>;
