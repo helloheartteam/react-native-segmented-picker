@@ -53,6 +53,7 @@ export interface Props {
   defaultSelections: Selections;
   size: number;
   confirmText: string;
+  cancelText: string;
   nativeTestID: string;
   // Styling
   fontSizeToolbar: number;
@@ -642,6 +643,7 @@ export default class SegmentedPicker extends Component<Props, State> {
       defaultSelections,
       size,
       confirmText,
+      cancelText,
       confirmTextColor,
       pickerItemTextColor,
       fontSizeToolbar,
@@ -694,6 +696,7 @@ export default class SegmentedPicker extends Component<Props, State> {
               fontSizeToolbar={fontSizeToolbar}
               fontFamilyConfirmText={fontFamilyConfirmText}
               confirmText={confirmText}
+              cancelText={cancelText}
               confirmTextColor={confirmTextColor}
               toolbarBackground={toolbarBackgroundColor}
               toolbarBorderColor={toolbarBorderColor}

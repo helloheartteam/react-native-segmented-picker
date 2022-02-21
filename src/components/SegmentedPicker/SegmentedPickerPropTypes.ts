@@ -7,6 +7,7 @@ export const defaultProps = {
   defaultSelections: {},
   size: 0.45,
   confirmText: 'Done',
+  cancelText: 'cancel',
   nativeTestID: undefined,
   confirmTextColor: '#0A84FF',
   pickerItemTextColor: '#a6a6a6',
@@ -68,6 +69,7 @@ export const propTypes = {
     ) : null;
   },
   confirmText: PropTypes.string,
+  cancelText: PropTypes.string,
   nativeTestID: PropTypes.string,
   // Styling
   fontSize: PropTypes.number,

@@ -6,6 +6,7 @@ import { TEST_IDS } from '../../config/constants';
 
 interface Props {
   confirmText: string;
+  cancelText: string;
   confirmTextColor: string;
   toolbarBackground: string;
   toolbarBorderColor: string;
@@ -21,6 +22,7 @@ interface Props {
  */
 export default ({
   confirmText,
+  cancelText,
   confirmTextColor,
   toolbarBackground,
   toolbarBorderColor,
@@ -45,7 +47,7 @@ export default ({
         testID={TEST_IDS.CONFIRM_BUTTON}
       >
         <Text style={[styles.toolbarCancelText, { color: confirmTextColor, fontSize: fontSizeToolbar, fontFamily: fontFamilyConfirmText }]}>
-          Cancel
+          {cancelText}
         </Text>
       </TouchableOpacity>
     </View>

@@ -76,6 +76,7 @@ class ExampleC extends Component<Props, State> {
           fontSize={23}
           fontSizeToolbar={21}
           confirmText='confirm'
+          cancelText='no no no'
           toolbarBorderColor='#000000'
           toolbarBackgroundColor='#ffffff'
           selectionBackgroundColor='#F6F6F6'
