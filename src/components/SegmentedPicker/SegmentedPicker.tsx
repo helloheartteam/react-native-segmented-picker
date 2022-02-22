@@ -85,7 +85,7 @@ interface RenderablePickerItem extends PickerItem {
 }
 
 export default class SegmentedPicker extends Component<Props, State> {
-  static propTypes = propTypes;
+  static propTypes = typeof propTypes;
   static defaultProps = defaultProps as Partial<Props>;
 
   /**
