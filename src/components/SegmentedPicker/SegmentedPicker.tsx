@@ -753,9 +753,9 @@ export default class SegmentedPicker extends Component<Props, State> {
                               key: `${column}_${key || label}`,
                             }))}
                             renderItem={this.renderPickerItem}
-                            keyExtractor={item => item.key}
+                            keyExtractor={(item: any) => item.key}
                             initialNumToRender={40}
-                            getItemLayout={(data, index) => (
+                            getItemLayout={(data: any, index: number) => (
                               {
                                 length: ITEM_HEIGHT,
                                 offset: ITEM_HEIGHT * index,
@@ -767,14 +767,14 @@ export default class SegmentedPicker extends Component<Props, State> {
                               paddingBottom: this.pickersVerticalPadding(),
                             }}
                             showsVerticalScrollIndicator={false}
-                            ref={ref => this.setFlatListRef(column, ref)}
-                            onScroll={event => this.onScroll(event, column)}
+                            ref={(ref : any) => this.setFlatListRef(column, ref)}
+                            onScroll={(event : any) => this.onScroll(event, column)}
                             onScrollBeginDrag={() => this.onScrollBeginDrag(column)}
-                            onScrollEndDrag={event => this.onScrollEndDrag(event, column)}
-                            onMomentumScrollBegin={event => (
+                            onScrollEndDrag={(event : any) => this.onScrollEndDrag(event, column)}
+                            onMomentumScrollBegin={(event: any) => (
                               this.onMomentumScrollBegin(event, column)
                             )}
-                            onMomentumScrollEnd={event => (
+                            onMomentumScrollEnd={(event : any) => (
                               this.onMomentumScrollEnd(event, column)
                             )}
                             scrollEventThrottle={32}
