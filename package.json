@@ -5,8 +5,8 @@
   "author": "Adam McArthur",
   "license": "MIT",
   "private": false,
-  "main": "dist/bundle.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/bundle",
+  "types": "dist/index",
   "scripts": {
     "lint": "eslint ./ && tsc --project ./tsconfig.json --noEmit --skipLibCheck",
     "unit-test": "jest --testPathIgnorePatterns __tests__/",
