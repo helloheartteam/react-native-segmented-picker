@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee8f2065-b333-45dc-ad84-f757009506f9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/examples/src/ExampleC/ExampleC.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/examples/src/ExampleC/ExampleC.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SegmentedPicker/SegmentedPicker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SegmentedPicker/SegmentedPicker.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SegmentedPicker/SegmentedPickerPropTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SegmentedPicker/SegmentedPickerPropTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Toolbar/Toolbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Toolbar/Toolbar.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="ee8f2065-b333-45dc-ad84-f757009506f9" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

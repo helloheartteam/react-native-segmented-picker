@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Dimensions, Platform, View, TouchableOpacity, Text, UIManager, findNodeHandle, Modal, TouchableWithoutFeedback, FlatList } from 'react-native';
+import { StyleSheet, Dimensions, Platform, View, TouchableOpacity, Text, requireNativeComponent, UIManager, findNodeHandle, Modal, TouchableWithoutFeedback, FlatList } from 'react-native';
 import { View as View$1 } from 'react-native-animatable';
 import PropTypes from 'prop-types';
 
@@ -324,6 +324,8 @@ React.createElement(View, {
     backgroundColor: borderColor
   }]
 })));
+
+var UIPicker = requireNativeComponent('UIPicker');
 
 /**
  * This class is utilised by the main Segmented Picker component as a fast synchronous
@@ -1164,7 +1166,25 @@ class SegmentedPicker extends Component {
       /*#__PURE__*/
       React.createElement(View, {
         style: styles.nativePickerContainer
-      }), !this.isNative() &&
+      },
+      /*#__PURE__*/
+      React.createElement(UIPicker, {
+        ref: this.uiPickerManager.reactRef,
+        nativeTestID: {
+          nativeTestID
+        },
+        style: styles.nativePicker,
+        options: SegmentedPicker.ApplyPickerOptionDefaults(options),
+        defaultSelections: defaultSelections,
+        onValueChange: this.uiPickerValueChange,
+        onEmitSelections: this.uiPickerManager.ingestSelections,
+        theme: {
+          itemHeight: ITEM_HEIGHT$2,
+          selectionBackgroundColor,
+          selectionBorderColor,
+          pickerItemTextColor
+        }
+      })), !this.isNative() &&
       /*#__PURE__*/
       React.createElement(React.Fragment, null,
       /*#__PURE__*/
