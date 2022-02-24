@@ -3,12 +3,17 @@ import { View, TouchableOpacity, Text } from 'react-native';
 import styles from './ToolbarStyles';
 import { TEST_IDS } from '../../config/constants';
 
+
 interface Props {
   confirmText: string;
+  cancelText: string;
   confirmTextColor: string;
   toolbarBackground: string;
   toolbarBorderColor: string;
+  fontSizeToolbar: number;
+  fontFamilyConfirmText: string;
   onConfirm: () => void;
+  onCancel: () => void;
 }
 
 /**
@@ -17,10 +22,14 @@ interface Props {
  */
 export default ({
   confirmText,
+  cancelText,
   confirmTextColor,
   toolbarBackground,
   toolbarBorderColor,
+  fontSizeToolbar,
+  fontFamilyConfirmText,
   onConfirm,
+  onCancel
 }: Props): ReactElement => (
   <View
     style={[
@@ -31,16 +40,27 @@ export default ({
       },
     ]}
   >
-    <TouchableOpacity
-      activeOpacity={0.4}
-      onPress={onConfirm}
-      testID={TEST_IDS.CONFIRM_BUTTON}
-    >
-      <View style={styles.toolbarConfirmContainer}>
-        <Text style={[styles.toolbarConfirmText, { color: confirmTextColor }]}>
+    <View style={styles.toolbarCancelContainer}>
+      <TouchableOpacity
+        activeOpacity={0.4}
+        onPress={onCancel}
+        testID={TEST_IDS.CONFIRM_BUTTON}
+      >
+        <Text style={[styles.toolbarCancelText, { color: confirmTextColor, fontSize: fontSizeToolbar, fontFamily: fontFamilyConfirmText }]}>
+          {cancelText}
+        </Text>
+      </TouchableOpacity>
+    </View>
+    <View style={styles.toolbarConfirmContainer}>
+      <TouchableOpacity
+        activeOpacity={0.4}
+        onPress={onConfirm}
+        testID={TEST_IDS.CONFIRM_BUTTON}
+      >
+        <Text style={[styles.toolbarConfirmText, { color: confirmTextColor, fontSize: fontSizeToolbar, fontFamily: fontFamilyConfirmText }]}>
           {confirmText}
         </Text>
-      </View>
-    </TouchableOpacity>
+      </TouchableOpacity>
+    </View>
   </View>
 );

@@ -26,5 +26,6 @@ export default StyleSheet.create({
   selectionMarker: {
     width: '100%',
     height: ITEM_HEIGHT,
+    borderRadius: 8,
   },
 });

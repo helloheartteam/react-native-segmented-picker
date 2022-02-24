@@ -9,6 +9,7 @@ import {
   Text,
   NativeSyntheticEvent,
   NativeScrollEvent,
+  
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { defaultProps, propTypes } from './SegmentedPickerPropTypes';
@@ -52,8 +53,13 @@ export interface Props {
   defaultSelections: Selections;
   size: number;
   confirmText: string;
+  cancelText: string;
   nativeTestID: string;
   // Styling
+  fontSizeToolbar: number;
+  fontFamilyConfirmText: string;
+  fontSize: number;
+  selectedItemTextColor: string;
   confirmTextColor: string;
   pickerItemTextColor: string;
   toolbarBackgroundColor: string;
@@ -70,6 +76,7 @@ export interface Props {
 interface State {
   visible: boolean;
   pickersHeight: number;
+  selected: Selections;
 }
 
 interface RenderablePickerItem extends PickerItem {
@@ -105,6 +112,7 @@ export default class SegmentedPicker extends Component<Props, State> {
     this.state = {
       visible: false,
       pickersHeight: 0,
+      selected: {},
     };
   }
 
@@ -252,6 +260,7 @@ export default class SegmentedPicker extends Component<Props, State> {
         ...this.selectionChanges,
         [column]: items[index].value,
       };
+      this.setState({ selected: this.selectionChanges });
       if (emitEvent) {
         onValueChange({ column, value: items[index].value });
       }
@@ -580,26 +589,33 @@ export default class SegmentedPicker extends Component<Props, State> {
       column,
       key,
       testID,
+      value
     },
     index,
   }: {
     item: RenderablePickerItem;
     index: number;
   }): ReactElement => {
-    const { pickerItemTextColor } = this.props;
+    const { selected } = this.state;
+    const { selectedItemTextColor, pickerItemTextColor, fontSize } = this.props;
+
     return (
       <View style={styles.pickerItem}>
         <TouchableOpacity
           activeOpacity={0.7}
-          onPress={() => this.selectIndex(index, column)}
+          onPress={() => 
+            this.selectIndex(index, column)
+            }
           testID={testID || key}
         >
-          <Text
-            numberOfLines={1}
-            style={[styles.pickerItemText, { color: pickerItemTextColor }]}
-          >
-            {label}
-          </Text>
+           <Text
+              numberOfLines={1}
+              style={[styles.pickerItemText, 
+                { color: (selected[column]  === value ) ?  selectedItemTextColor: pickerItemTextColor,
+                fontSize: fontSize }]}
+            >
+               {label}
+            </Text>
         </TouchableOpacity>
       </View>
     );
@@ -627,8 +643,13 @@ export default class SegmentedPicker extends Component<Props, State> {
       defaultSelections,
       size,
       confirmText,
+      cancelText,
       confirmTextColor,
       pickerItemTextColor,
+      fontSizeToolbar,
+      fontFamilyConfirmText,
+      fontSize,
+      selectedItemTextColor,
       toolbarBackgroundColor,
       toolbarBorderColor,
       selectionBackgroundColor,
@@ -672,11 +693,15 @@ export default class SegmentedPicker extends Component<Props, State> {
             style={[styles.pickerContainer, { height: `${size * 100}%`, backgroundColor }]}
           >
             <Toolbar
+              fontSizeToolbar={fontSizeToolbar}
+              fontFamilyConfirmText={fontFamilyConfirmText}
               confirmText={confirmText}
+              cancelText={cancelText}
               confirmTextColor={confirmTextColor}
               toolbarBackground={toolbarBackgroundColor}
               toolbarBorderColor={toolbarBorderColor}
               onConfirm={this.onConfirm}
+              onCancel={this.onCancel}
             />
 
             <View style={styles.selectableArea}>
@@ -685,7 +710,7 @@ export default class SegmentedPicker extends Component<Props, State> {
                 <View style={styles.nativePickerContainer}>
                   <UIPicker
                     ref={this.uiPickerManager.reactRef}
-                    nativeTestID={nativeTestID}
+                    nativeTestID={{nativeTestID}}
                     style={styles.nativePicker}
                     options={SegmentedPicker.ApplyPickerOptionDefaults(options)}
                     defaultSelections={defaultSelections}

@@ -1,29 +1,46 @@
 import { StyleSheet } from 'react-native';
-import { GUTTER_WIDTH, TEXT_CORRECTION } from '../../config/constants';
+import { GUTTER_WIDTH, TEXT_CORRECTION, ITEM_HEIGHTS } from '../../config/constants';
 
 export default StyleSheet.create({
   toolbarContainer: {
     width: '100%',
-    height: 42,
+    height: 60,
     borderBottomWidth: 1,
     flexDirection: 'row',
-    justifyContent: 'flex-end',
-    alignItems: 'center',
-    alignSelf: 'flex-start',
+    paddingTop: 16,
+    paddingBottom: 16,
   },
 
   toolbarConfirmContainer: {
     height: '100%',
-    paddingLeft: 30,
-    justifyContent: 'center',
+    flex: 1,
+    alignItems: 'flex-end'
+  },
+
+  toolbarCancelContainer: {
+    height: '100%',
+    flex: 1,
+    alignItems: 'flex-start',
+    width: 30,
+
+
   },
 
   toolbarConfirmText: {
-    fontWeight: 'bold',
-    fontSize: 15,
+    fontSize: 23,
+    paddingTop: 0,
+    paddingRight: GUTTER_WIDTH,    
+    paddingBottom: TEXT_CORRECTION,
+    paddingLeft: GUTTER_WIDTH,
+    fontWeight: '300',
+  },
+
+  toolbarCancelText: {
+    fontSize: 23,
     paddingTop: 0,
     paddingRight: GUTTER_WIDTH,
     paddingBottom: TEXT_CORRECTION,
-    paddingLeft: 0,
+    paddingLeft: GUTTER_WIDTH,
+    fontWeight: '300',
   },
 });
