@@ -14,6 +14,8 @@ A cross platform implementation of [UIPickerView](https://developer.apple.com/do
 ![Android Example](https://imgkk.com/i/qmfh.gif)
 ![iOS Example](https://imgkk.com/i/yqem.gif)
 
+
+
 ## Installation
 
 ```bash
@@ -87,13 +89,18 @@ Further examples can be found in [./examples/src](https://github.com/adammcarth/
 | `nativeTestID`             | Accessibility identifier of the native component for E2E testing.                                                                                                        | `''`        |
 | `size`                     | Floating point between 0 and 1 representing the percentage of screen to take up.                                                                                         | `0.45`      |
 | `confirmText`              | Text displayed in the top right hand corner.                                                                                                                             | `'Done'`    |
+| `cancelText`              | Text displayed in the top left hand corner.                                                                                                                             | `'Done'`    |
 | `confirmTextColor`         | Color of the `confirmText` button.                                                                                                                                       | `'#0A84FF'` |
 | `toolbarBackgroundColor`   | Background color of the top container where the `confirmText` is displayed.                                                                                              | `'#FAFAF8'` |
 | `toolbarBorderColor`       | Bottom border color of the `toolbarContainer`.                                                                                                                           | `'#E7E7E7'` |
-| `pickerItemTextColor`      | Color of the text for each item in the picklist.                                                                                                                         | `'#282828'` |
+| `pickerItemTextColor`      | Color of the text for each item in the picklist except the selected option.                                                                                             | `'#282828'` |
 | `selectionBackgroundColor` | Background color of the box which shows selected items.                                                                                                                  | `'#F8F8F8'` |
 | `selectionBorderColor`     | Border color (top and bottom) of the selection mask.                                                                                                                     | `'#DCDCDC'` |
 | `backgroundColor`          | Background color of the inner SegmentedPicker container.                                                                                                                 | `'#FFFFFF'` |
+| `fontSize`                 | Sizr of options text listed in picker.                                                                                                                                   | `15`       |
+| `fontSizeToolbar`          | Size of toolbar text buttons.                                                                                                                                           | `23`.      |
+| `fontFamilyConfirmText`    | Font family for toolbar buttons text (confirm and cancel buttons).                                                                                                       | ``         |
+| `selectedItemTextColor`    | Color for the option currently selected.                                                                                                                                  | `#000000` |
 
 ### Event Props
 
