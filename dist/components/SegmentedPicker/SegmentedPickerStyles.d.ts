@@ -56,5 +56,12 @@ declare const _default: {
         width: string;
         height: string;
     };
+    title: {
+        width: string;
+        textAlign: "center";
+        fontSize: number;
+        lineHeight: number;
+        fontFamily: string;
+    };
 };
 export default _default;

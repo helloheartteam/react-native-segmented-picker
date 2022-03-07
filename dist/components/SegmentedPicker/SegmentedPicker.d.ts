@@ -22,6 +22,8 @@ export interface Props {
     selectionBackgroundColor: string;
     selectionBorderColor: string;
     backgroundColor: string;
+    title: string;
+    toolBarComponent: JSX.Element;
     onValueChange: (event: SelectionEvent) => void;
     onCancel: (event: Selections) => void;
     onConfirm: (event: Selections) => void;
@@ -63,6 +65,7 @@ export default class SegmentedPicker extends Component<Props, State> {
         selectionBorderColor: import("prop-types").Requireable<string>;
         fontFamilyConfirmText: import("prop-types").Requireable<string>;
         backgroundColor: import("prop-types").Requireable<string>;
+        title: import("prop-types").Requireable<string>;
         onValueChange: import("prop-types").Requireable<(...args: any[]) => any>;
         onCancel: import("prop-types").Requireable<(...args: any[]) => any>;
         onConfirm: import("prop-types").Requireable<(...args: any[]) => any>;

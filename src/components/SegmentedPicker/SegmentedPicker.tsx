@@ -67,6 +67,8 @@ export interface Props {
   selectionBackgroundColor: string;
   selectionBorderColor: string;
   backgroundColor: string;
+  title: string;
+  toolBarComponent: JSX.Element;
   // Events
   onValueChange: (event: SelectionEvent) => void;
   onCancel: (event: Selections) => void,
@@ -655,6 +657,8 @@ export default class SegmentedPicker extends Component<Props, State> {
       selectionBackgroundColor,
       selectionBorderColor,
       backgroundColor,
+      title,
+      toolBarComponent
     } = this.props;
 
     return (
@@ -690,9 +694,9 @@ export default class SegmentedPicker extends Component<Props, State> {
             delay={100}
             duration={ANIMATION_TIME}
             ref={this.pickerContainerRef}
-            style={[styles.pickerContainer, { height: `${size * 100}%`, backgroundColor }]}
+            style={[styles.pickerContainer, { height: `${size * 100}%`, backgroundColor }, { borderWidth: 3}]}
           >
-            {/* <Toolbar
+            {toolBarComponent ? toolBarComponent : <Toolbar
               fontSizeToolbar={fontSizeToolbar}
               fontFamilyConfirmText={fontFamilyConfirmText}
               confirmText={confirmText}
@@ -702,8 +706,8 @@ export default class SegmentedPicker extends Component<Props, State> {
               toolbarBorderColor={toolbarBorderColor}
               onConfirm={this.onConfirm}
               onCancel={this.onCancel}
-            /> */}
-
+            />}
+            { title ? <Text style={styles.title}>{title}</Text> : null}
             <View style={styles.selectableArea}>
               {/* Native iOS Picker is enabled */}
               {this.isNative() && (

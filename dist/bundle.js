@@ -21,6 +21,7 @@ const defaultProps = {
   selectionBorderColor: '#C9C9C9',
   fontSize: 19,
   backgroundColor: '#FFFFFF',
+  title: 'When did you start taking Lisinopril?',
   onValueChange: () => {},
   onCancel: () => {},
   onConfirm: () => {}
@@ -63,6 +64,7 @@ const propTypes = {
   selectionBorderColor: PropTypes.string,
   fontFamilyConfirmText: PropTypes.string,
   backgroundColor: PropTypes.string,
+  title: PropTypes.string,
   // Events
   onValueChange: PropTypes.func,
   onCancel: PropTypes.func,
@@ -164,6 +166,13 @@ var styles = StyleSheet.create({
   nativePicker: {
     width: '100%',
     height: '100%'
+  },
+  title: {
+    width: '100%',
+    textAlign: 'center',
+    fontSize: 19,
+    lineHeight: 28,
+    fontFamily: 'roboto'
   }
 });
 
@@ -1091,7 +1100,9 @@ class SegmentedPicker extends Component {
       toolbarBorderColor,
       selectionBackgroundColor,
       selectionBorderColor,
-      backgroundColor
+      backgroundColor,
+      title,
+      toolBarComponent
     } = this.props;
     return (
       /*#__PURE__*/
@@ -1145,8 +1156,10 @@ class SegmentedPicker extends Component {
         style: [styles.pickerContainer, {
           height: `${size * 100}%`,
           backgroundColor
+        }, {
+          borderWidth: 3
         }]
-      },
+      }, toolBarComponent ? toolBarComponent :
       /*#__PURE__*/
       React.createElement(Toolbar, {
         fontSizeToolbar: fontSizeToolbar,
@@ -1158,7 +1171,11 @@ class SegmentedPicker extends Component {
         toolbarBorderColor: toolbarBorderColor,
         onConfirm: this.onConfirm,
         onCancel: this.onCancel
-      }),
+      }), title ?
+      /*#__PURE__*/
+      React.createElement(Text, {
+        style: styles.title
+      }, title) : null,
       /*#__PURE__*/
       React.createElement(View, {
         style: styles.selectableArea

@@ -18,6 +18,7 @@ export const defaultProps = {
   selectionBorderColor: '#C9C9C9',
   fontSize: 19,
   backgroundColor: '#FFFFFF',
+  title: 'When did you start taking Lisinopril?',
 
   onValueChange: () => {},
   onCancel: () => {},
@@ -83,6 +84,7 @@ export const propTypes = {
   selectionBorderColor: PropTypes.string,
   fontFamilyConfirmText: PropTypes.string,
   backgroundColor: PropTypes.string,
+  title: PropTypes.string,
   // Events
   onValueChange: PropTypes.func,
   onCancel: PropTypes.func,
