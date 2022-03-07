@@ -69,6 +69,7 @@ export interface Props {
   backgroundColor: string;
   title: string;
   toolBarComponent: JSX.Element;
+  buttonComponent: JSX.Element
   // Events
   onValueChange: (event: SelectionEvent) => void;
   onCancel: (event: Selections) => void,
@@ -658,7 +659,8 @@ export default class SegmentedPicker extends Component<Props, State> {
       selectionBorderColor,
       backgroundColor,
       title,
-      toolBarComponent
+      toolBarComponent,
+      buttonComponent
     } = this.props;
 
     return (
@@ -795,6 +797,7 @@ export default class SegmentedPicker extends Component<Props, State> {
                 </>
               )}
             </View>
+            {buttonComponent ? buttonComponent : null }
           </Animatable.View>
         </Animatable.View>
       </Modal>
