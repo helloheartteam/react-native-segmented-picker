@@ -24,6 +24,7 @@ export interface Props {
     backgroundColor: string;
     title: string;
     toolBarComponent: JSX.Element;
+    buttonComponent: JSX.Element;
     onValueChange: (event: SelectionEvent) => void;
     onCancel: (event: Selections) => void;
     onConfirm: (event: Selections) => void;

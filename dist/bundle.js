@@ -1102,7 +1102,8 @@ class SegmentedPicker extends Component {
       selectionBorderColor,
       backgroundColor,
       title,
-      toolBarComponent
+      toolBarComponent,
+      buttonComponent
     } = this.props;
     return (
       /*#__PURE__*/
@@ -1268,7 +1269,7 @@ class SegmentedPicker extends Component {
           android: undefined
         }),
         testID: `${columnTestID}`
-      }))))))))))
+      }))))))), buttonComponent ? buttonComponent : null)))
     );
   }
 
