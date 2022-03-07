@@ -692,7 +692,7 @@ export default class SegmentedPicker extends Component<Props, State> {
             ref={this.pickerContainerRef}
             style={[styles.pickerContainer, { height: `${size * 100}%`, backgroundColor }]}
           >
-            <Toolbar
+            {/* <Toolbar
               fontSizeToolbar={fontSizeToolbar}
               fontFamilyConfirmText={fontFamilyConfirmText}
               confirmText={confirmText}
@@ -702,7 +702,7 @@ export default class SegmentedPicker extends Component<Props, State> {
               toolbarBorderColor={toolbarBorderColor}
               onConfirm={this.onConfirm}
               onCancel={this.onCancel}
-            />
+            /> */}
 
             <View style={styles.selectableArea}>
               {/* Native iOS Picker is enabled */}
