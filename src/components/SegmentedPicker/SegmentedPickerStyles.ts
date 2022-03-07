@@ -82,6 +82,7 @@ export default StyleSheet.create({
     textAlign: 'center',
     fontSize: 19,
     lineHeight: 28,
-    fontFamily: 'roboto'
+    fontFamily: 'roboto',
+    paddingBottom: 20
   }
 });

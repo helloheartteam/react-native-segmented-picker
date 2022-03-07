@@ -62,6 +62,7 @@ declare const _default: {
         fontSize: number;
         lineHeight: number;
         fontFamily: string;
+        paddingBottom: number;
     };
 };
 export default _default;
