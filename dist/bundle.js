@@ -1270,7 +1270,7 @@ class SegmentedPicker extends Component {
           android: undefined
         }),
         testID: `${columnTestID}`
-      }))))))), buttonComponent ? buttonComponent : null)))
+      }))))))), buttonComponent ? buttonComponent(this.onConfirm) : null)))
     );
   }
 

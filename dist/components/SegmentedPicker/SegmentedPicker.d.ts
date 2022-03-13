@@ -24,7 +24,7 @@ export interface Props {
     backgroundColor: string;
     title: string;
     toolBarComponent: JSX.Element;
-    buttonComponent: JSX.Element;
+    buttonComponent: any;
     onValueChange: (event: SelectionEvent) => void;
     onCancel: (event: Selections) => void;
     onConfirm: (event: Selections) => void;
@@ -57,6 +57,12 @@ export default class SegmentedPicker extends Component<Props, State> {
         nativeTestID: import("prop-types").Requireable<string>;
         fontSize: import("prop-types").Requireable<number>;
         selectedItemTextColor: import("prop-types").Requireable<string>;
+        /**
+         * @static
+         * Decorates the `options` prop with necessary defaults for missing values.
+         * @param options {PickerOptions}
+         * @return {PickerOptions}
+         */
         confirmTextColor: import("prop-types").Requireable<string>;
         pickerItemTextColor: import("prop-types").Requireable<string>;
         toolbarBackgroundColor: import("prop-types").Requireable<string>;
