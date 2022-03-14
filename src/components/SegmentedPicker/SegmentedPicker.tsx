@@ -696,7 +696,7 @@ export default class SegmentedPicker extends Component<Props, State> {
             delay={100}
             duration={ANIMATION_TIME}
             ref={this.pickerContainerRef}
-            style={[styles.pickerContainer, { height: `${size * 100}%`, backgroundColor }, { borderWidth: 3}]}
+            style={[styles.pickerContainer, { height: `${size * 100}%`, backgroundColor }]}
           >
             {toolBarComponent ? toolBarComponent : <Toolbar
               fontSizeToolbar={fontSizeToolbar}

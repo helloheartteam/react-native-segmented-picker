@@ -18,7 +18,7 @@ export const defaultProps = {
   selectionBorderColor: '#C9C9C9',
   fontSize: 19,
   backgroundColor: '#FFFFFF',
-  title: 'When did you start taking Lisinopril?',
+  title: '',
 
   onValueChange: () => {},
   onCancel: () => {},
