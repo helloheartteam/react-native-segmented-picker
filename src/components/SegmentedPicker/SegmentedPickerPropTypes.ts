@@ -18,7 +18,6 @@ export const defaultProps = {
   selectionBorderColor: '#C9C9C9',
   fontSize: 19,
   backgroundColor: '#FFFFFF',
-  title: '',
 
   onValueChange: () => {},
   onCancel: () => {},

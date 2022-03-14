@@ -17,7 +17,6 @@ export declare const defaultProps: {
     selectionBorderColor: string;
     fontSize: number;
     backgroundColor: string;
-    title: string;
     onValueChange: () => void;
     onCancel: () => void;
     onConfirm: () => void;

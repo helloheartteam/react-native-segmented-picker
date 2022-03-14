@@ -21,7 +21,6 @@ const defaultProps = {
   selectionBorderColor: '#C9C9C9',
   fontSize: 19,
   backgroundColor: '#FFFFFF',
-  title: 'When did you start taking Lisinopril?',
   onValueChange: () => {},
   onCancel: () => {},
   onConfirm: () => {}
@@ -1158,8 +1157,6 @@ class SegmentedPicker extends Component {
         style: [styles.pickerContainer, {
           height: `${size * 100}%`,
           backgroundColor
-        }, {
-          borderWidth: 3
         }]
       }, toolBarComponent ? toolBarComponent :
       /*#__PURE__*/
