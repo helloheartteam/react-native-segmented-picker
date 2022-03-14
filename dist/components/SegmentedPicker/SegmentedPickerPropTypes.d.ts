@@ -17,6 +17,7 @@ export declare const defaultProps: {
     selectionBorderColor: string;
     fontSize: number;
     backgroundColor: string;
+    title: string;
     onValueChange: () => void;
     onCancel: () => void;
     onConfirm: () => void;
@@ -52,6 +53,7 @@ export declare const propTypes: {
     selectionBorderColor: PropTypes.Requireable<string>;
     fontFamilyConfirmText: PropTypes.Requireable<string>;
     backgroundColor: PropTypes.Requireable<string>;
+    title: PropTypes.Requireable<string>;
     onValueChange: PropTypes.Requireable<(...args: any[]) => any>;
     onCancel: PropTypes.Requireable<(...args: any[]) => any>;
     onConfirm: PropTypes.Requireable<(...args: any[]) => any>;

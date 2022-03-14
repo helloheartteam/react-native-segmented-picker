@@ -76,4 +76,13 @@ export default StyleSheet.create({
     width: '100%',
     height: '100%',
   },
+
+  title: {
+    width: '100%',
+    textAlign: 'center',
+    fontSize: 19,
+    lineHeight: 28,
+    fontFamily: 'roboto',
+    paddingBottom: 20
+  }
 });
