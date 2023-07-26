@@ -1096,7 +1096,6 @@ class SegmentedPicker extends Component {
       fontFamilyConfirmText,
       fontSize,
       titleStyle,
-      closeableContainerStyle,
       selectedItemTextColor,
       toolbarBackgroundColor,
       toolbarBorderColor,
@@ -1135,7 +1134,7 @@ class SegmentedPicker extends Component {
       },
       /*#__PURE__*/
       React.createElement(View, {
-        style: [Object.assign(Object.assign({}, styles.closeableContainer), closeableContainerStyle), {
+        style: [styles.closeableContainer, {
           height: `${100 - size * 100}%`
         }]
       })),
