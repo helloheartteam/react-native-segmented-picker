@@ -56,7 +56,8 @@ export interface Props {
   cancelText: string;
   nativeTestID: string;
   // Styling
-  titleStyle?: any;
+  closeableContainerStyle?: React.CSSProperties;
+  titleStyle?: React.CSSProperties;
   fontSizeToolbar: number;
   fontFamilyConfirmText: string;
   fontSize: number;
@@ -654,6 +655,7 @@ export default class SegmentedPicker extends Component<Props, State> {
       fontFamilyConfirmText,
       fontSize,
       titleStyle,
+      closeableContainerStyle,
       selectedItemTextColor,
       toolbarBackgroundColor,
       toolbarBorderColor,
@@ -685,7 +687,10 @@ export default class SegmentedPicker extends Component<Props, State> {
           testID={TEST_IDS.PICKER}
         >
           <TouchableWithoutFeedback onPress={this.onCancel} testID={TEST_IDS.CLOSE_AREA}>
-            <View style={[styles.closeableContainer, { height: `${(100 - (size * 100))}%` }]} />
+            <View style={[
+              {...styles.closeableContainer, ...closeableContainerStyle},
+              { height: `${(100 - (size * 100))}%` }
+            ]} />
           </TouchableWithoutFeedback>
 
           <Animatable.View
