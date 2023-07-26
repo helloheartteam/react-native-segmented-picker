@@ -17,6 +17,7 @@ export interface Props {
     fontSize: number;
     selectedItemTextColor: string;
     confirmTextColor: string;
+    pickerItemStyle: any;
     pickerItemTextColor: string;
     toolbarBackgroundColor: string;
     toolbarBorderColor: string;

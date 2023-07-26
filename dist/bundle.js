@@ -993,12 +993,13 @@ class SegmentedPicker extends Component {
       const {
         selectedItemTextColor,
         pickerItemTextColor,
+        pickerItemStyle,
         fontSize
       } = this.props;
       return (
         /*#__PURE__*/
         React.createElement(View, {
-          style: styles.pickerItem
+          style: Object.assign(Object.assign({}, styles.pickerItem), pickerItemStyle)
         },
         /*#__PURE__*/
         React.createElement(TouchableOpacity, {
