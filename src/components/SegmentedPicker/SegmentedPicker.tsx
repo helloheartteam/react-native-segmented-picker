@@ -62,6 +62,7 @@ export interface Props {
   fontSize: number;
   selectedItemTextColor: string;
   confirmTextColor: string;
+  pickerItemStyle: any;
   pickerItemTextColor: string;
   toolbarBackgroundColor: string;
   toolbarBorderColor: string;
@@ -601,10 +602,10 @@ export default class SegmentedPicker extends Component<Props, State> {
     index: number;
   }): ReactElement => {
     const { selected } = this.state;
-    const { selectedItemTextColor, pickerItemTextColor, fontSize } = this.props;
+    const { selectedItemTextColor, pickerItemTextColor, pickerItemStyle, fontSize } = this.props;
 
     return (
-      <View style={styles.pickerItem}>
+      <View style={{...styles.pickerItem, ...pickerItemStyle}}>
         <TouchableOpacity
           activeOpacity={0.7}
           onPress={() =>
