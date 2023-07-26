@@ -56,8 +56,8 @@ export interface Props {
   cancelText: string;
   nativeTestID: string;
   // Styling
-  closeableContainerStyle?: React.CSSProperties;
-  titleStyle?: React.CSSProperties;
+  closeableContainerStyle?: any;
+  titleStyle?: any;
   fontSizeToolbar: number;
   fontFamilyConfirmText: string;
   fontSize: number;
