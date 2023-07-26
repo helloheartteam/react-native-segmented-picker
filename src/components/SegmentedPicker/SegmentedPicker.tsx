@@ -9,7 +9,7 @@ import {
   Text,
   NativeSyntheticEvent,
   NativeScrollEvent,
-  
+
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { defaultProps, propTypes } from './SegmentedPickerPropTypes';
@@ -56,6 +56,7 @@ export interface Props {
   cancelText: string;
   nativeTestID: string;
   // Styling
+  titleStyle?: any;
   fontSizeToolbar: number;
   fontFamilyConfirmText: string;
   fontSize: number;
@@ -606,14 +607,14 @@ export default class SegmentedPicker extends Component<Props, State> {
       <View style={styles.pickerItem}>
         <TouchableOpacity
           activeOpacity={0.7}
-          onPress={() => 
+          onPress={() =>
             this.selectIndex(index, column)
             }
           testID={testID || key}
         >
            <Text
               numberOfLines={1}
-              style={[styles.pickerItemText, 
+              style={[styles.pickerItemText,
                 { color: (selected[column]  === value ) ?  selectedItemTextColor: pickerItemTextColor,
                 fontSize: fontSize }]}
             >
@@ -652,6 +653,7 @@ export default class SegmentedPicker extends Component<Props, State> {
       fontSizeToolbar,
       fontFamilyConfirmText,
       fontSize,
+      titleStyle,
       selectedItemTextColor,
       toolbarBackgroundColor,
       toolbarBorderColor,
@@ -709,7 +711,7 @@ export default class SegmentedPicker extends Component<Props, State> {
               onConfirm={this.onConfirm}
               onCancel={this.onCancel}
             />}
-            { title ? <Text style={styles.title}>{title}</Text> : null}
+            { title ? <Text style={{...styles.title, ...titleStyle}}>{title}</Text> : null}
             <View style={styles.selectableArea}>
               {/* Native iOS Picker is enabled */}
               {this.isNative() && (
