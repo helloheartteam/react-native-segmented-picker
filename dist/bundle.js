@@ -993,12 +993,13 @@ class SegmentedPicker extends Component {
       const {
         selectedItemTextColor,
         pickerItemTextColor,
+        pickerItemStyle,
         fontSize
       } = this.props;
       return (
         /*#__PURE__*/
         React.createElement(View, {
-          style: styles.pickerItem
+          style: Object.assign(Object.assign({}, styles.pickerItem), pickerItemStyle)
         },
         /*#__PURE__*/
         React.createElement(TouchableOpacity, {
@@ -1095,6 +1096,7 @@ class SegmentedPicker extends Component {
       fontSizeToolbar,
       fontFamilyConfirmText,
       fontSize,
+      titleStyle,
       selectedItemTextColor,
       toolbarBackgroundColor,
       toolbarBorderColor,
@@ -1173,7 +1175,7 @@ class SegmentedPicker extends Component {
       }), title ?
       /*#__PURE__*/
       React.createElement(Text, {
-        style: styles.title
+        style: Object.assign(Object.assign({}, styles.title), titleStyle)
       }, title) : null,
       /*#__PURE__*/
       React.createElement(View, {

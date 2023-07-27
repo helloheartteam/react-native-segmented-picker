@@ -11,11 +11,13 @@ export interface Props {
     confirmText: string;
     cancelText: string;
     nativeTestID: string;
+    titleStyle?: any;
     fontSizeToolbar: number;
     fontFamilyConfirmText: string;
     fontSize: number;
     selectedItemTextColor: string;
     confirmTextColor: string;
+    pickerItemStyle: any;
     pickerItemTextColor: string;
     toolbarBackgroundColor: string;
     toolbarBorderColor: string;

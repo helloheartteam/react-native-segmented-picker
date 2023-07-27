@@ -9,7 +9,7 @@ import {
   Text,
   NativeSyntheticEvent,
   NativeScrollEvent,
-  
+
 } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { defaultProps, propTypes } from './SegmentedPickerPropTypes';
@@ -56,11 +56,13 @@ export interface Props {
   cancelText: string;
   nativeTestID: string;
   // Styling
+  titleStyle?: any;
   fontSizeToolbar: number;
   fontFamilyConfirmText: string;
   fontSize: number;
   selectedItemTextColor: string;
   confirmTextColor: string;
+  pickerItemStyle: any;
   pickerItemTextColor: string;
   toolbarBackgroundColor: string;
   toolbarBorderColor: string;
@@ -600,20 +602,20 @@ export default class SegmentedPicker extends Component<Props, State> {
     index: number;
   }): ReactElement => {
     const { selected } = this.state;
-    const { selectedItemTextColor, pickerItemTextColor, fontSize } = this.props;
+    const { selectedItemTextColor, pickerItemTextColor, pickerItemStyle, fontSize } = this.props;
 
     return (
-      <View style={styles.pickerItem}>
+      <View style={{...styles.pickerItem, ...pickerItemStyle}}>
         <TouchableOpacity
           activeOpacity={0.7}
-          onPress={() => 
+          onPress={() =>
             this.selectIndex(index, column)
             }
           testID={testID || key}
         >
            <Text
               numberOfLines={1}
-              style={[styles.pickerItemText, 
+              style={[styles.pickerItemText,
                 { color: (selected[column]  === value ) ?  selectedItemTextColor: pickerItemTextColor,
                 fontSize: fontSize }]}
             >
@@ -652,6 +654,7 @@ export default class SegmentedPicker extends Component<Props, State> {
       fontSizeToolbar,
       fontFamilyConfirmText,
       fontSize,
+      titleStyle,
       selectedItemTextColor,
       toolbarBackgroundColor,
       toolbarBorderColor,
@@ -709,7 +712,7 @@ export default class SegmentedPicker extends Component<Props, State> {
               onConfirm={this.onConfirm}
               onCancel={this.onCancel}
             />}
-            { title ? <Text style={styles.title}>{title}</Text> : null}
+            { title ? <Text style={{...styles.title, ...titleStyle}}>{title}</Text> : null}
             <View style={styles.selectableArea}>
               {/* Native iOS Picker is enabled */}
               {this.isNative() && (
