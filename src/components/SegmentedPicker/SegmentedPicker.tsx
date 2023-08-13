@@ -57,6 +57,7 @@ export interface Props {
   nativeTestID: string;
   // Styling
   titleStyle?: any;
+  containerStyle?: any;
   fontSizeToolbar: number;
   fontFamilyConfirmText: string;
   fontSize: number;
@@ -655,6 +656,7 @@ export default class SegmentedPicker extends Component<Props, State> {
       fontFamilyConfirmText,
       fontSize,
       titleStyle,
+      containerStyle,
       selectedItemTextColor,
       toolbarBackgroundColor,
       toolbarBorderColor,
@@ -699,7 +701,10 @@ export default class SegmentedPicker extends Component<Props, State> {
             delay={100}
             duration={ANIMATION_TIME}
             ref={this.pickerContainerRef}
-            style={[styles.pickerContainer, { height: `${size * 100}%`, backgroundColor }]}
+            style={[
+              {...styles.pickerContainer, ...containerStyle},
+              { height: `${size * 100}%`, backgroundColor }
+            ]}
           >
             {toolBarComponent ? toolBarComponent : <Toolbar
               fontSizeToolbar={fontSizeToolbar}

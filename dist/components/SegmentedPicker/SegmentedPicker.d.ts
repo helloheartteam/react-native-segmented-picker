@@ -12,6 +12,7 @@ export interface Props {
     cancelText: string;
     nativeTestID: string;
     titleStyle?: any;
+    containerStyle?: any;
     fontSizeToolbar: number;
     fontFamilyConfirmText: string;
     fontSize: number;

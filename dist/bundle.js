@@ -1097,6 +1097,7 @@ class SegmentedPicker extends Component {
       fontFamilyConfirmText,
       fontSize,
       titleStyle,
+      containerStyle,
       selectedItemTextColor,
       toolbarBackgroundColor,
       toolbarBorderColor,
@@ -1156,7 +1157,7 @@ class SegmentedPicker extends Component {
         delay: 100,
         duration: ANIMATION_TIME,
         ref: this.pickerContainerRef,
-        style: [styles.pickerContainer, {
+        style: [Object.assign(Object.assign({}, styles.pickerContainer), containerStyle), {
           height: `${size * 100}%`,
           backgroundColor
         }]
